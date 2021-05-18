@@ -10,7 +10,7 @@ import {
 import { useTranslation } from 'react-i18next';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-import { LibraryStackParams } from '../../navigation';
+import { LibraryStackParams } from '@navigation';
 
 type LibraryScreenNavigationProp = StackNavigationProp<
   LibraryStackParams,

@@ -9,7 +9,8 @@ import {
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { ListenNowStackParams } from '../../navigation';
+
+import { ListenNowStackParams } from '@navigation';
 
 type PodcastScreenNavigationProp = StackNavigationProp<
   ListenNowStackParams,
