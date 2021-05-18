@@ -1,0 +1,85 @@
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useTranslation } from 'react-i18next';
+import Icon from 'react-native-vector-icons/AntDesign';
+import EntypoIcon from 'react-native-vector-icons/Entypo';
+
+import ListenNowStack from './listennow.stack';
+import BrowseStack from './browse.stack';
+import LibraryStack from './library.stack';
+import SearchStack from './search.stack';
+import { Platform, PlatformColor } from 'react-native';
+
+export type TabStackParamList = {
+  ListenNow: undefined;
+  Browse: undefined;
+  Library: undefined;
+  Search: undefined;
+};
+
+const Tab = createBottomTabNavigator<TabStackParamList>();
+
+const TabStack = () => {
+  const { t } = useTranslation();
+
+  return (
+    <Tab.Navigator
+      lazy={false}
+      tabBarOptions={{
+        // @ts-expect-error: types are incomplete for PlatformColor
+        activeTintColor: Platform.select({
+          ios: PlatformColor('systemPurple'),
+          android: PlatformColor('@android:color/holo_purple'),
+        }),
+        style: {
+          backgroundColor: Platform.select({
+            ios: PlatformColor('systemBackground'),
+            android: PlatformColor('@android:color/background_dark'),
+          }),
+        },
+      }}>
+      <Tab.Screen
+        name="ListenNow"
+        component={ListenNowStack}
+        options={{
+          tabBarLabel: t('Listen Now'),
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="play" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Browse"
+        component={BrowseStack}
+        options={{
+          tabBarLabel: t('Browse'),
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="appstore1" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Library"
+        component={LibraryStack}
+        options={{
+          tabBarLabel: t('Library'),
+          tabBarIcon: ({ color, size }) => (
+            <EntypoIcon name="archive" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={SearchStack}
+        options={{
+          tabBarLabel: t('Search'),
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="search1" size={size} color={color} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+};
+
+export default TabStack;
