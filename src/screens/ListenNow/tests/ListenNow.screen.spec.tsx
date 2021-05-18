@@ -2,10 +2,18 @@ import React from 'react';
 import { render } from '@testing-library/react-native';
 import ListenNowScreen from '../ListenNow.screen';
 
-test('form submits two answers', () => {
-  const { getByText } = render(<ListenNowScreen />);
+import { describe, it, expect } from '@jest/globals';
 
-  const label = getByText(/ListenNow/i);
+describe('Listen Now screen', () => {
+  it('has default components', () => {
+    const { getByText } = render(<ListenNowScreen />);
 
-  expect(label).toBeDefined();
+    const upNext = getByText(/Up Next/i);
+    const latestEpisodes = getByText(/Latest Episodes/i);
+    const recentlyPlayed = getByText(/Recently Played/i);
+
+    expect(upNext).toBeDefined();
+    expect(latestEpisodes).toBeDefined();
+    expect(recentlyPlayed).toBeDefined();
+  });
 });
