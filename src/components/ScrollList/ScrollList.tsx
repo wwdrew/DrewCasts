@@ -23,14 +23,7 @@ function generateItems(items: Podcast[]) {
   return items.map(item => <PodcastItem key={item.id} item={item} />);
 }
 
-const ScrollList = ({
-  heading,
-  subheading,
-  onPress,
-  items,
-}: // rows = 1,
-// size = "small"
-Props) => {
+const ScrollList = ({ heading, subheading, onPress, items }: Props) => {
   const { t } = useTranslation();
 
   return (
@@ -46,7 +39,7 @@ Props) => {
         {items.length > 0 ? (
           generateItems(items)
         ) : (
-          <Text style={styles.text}>No items to display</Text>
+          <Text style={styles.text}>{t('No items to display')}</Text>
         )}
       </View>
     </View>

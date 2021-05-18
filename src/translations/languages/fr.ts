@@ -11,5 +11,8 @@ export default {
     'See All': 'Voir tout',
     'Episodes you have listened to': 'Épisodes que vous avez écoutés.',
     'New & Noteworthy': 'Nouveau et remarquable',
+    'Podcast Detail': 'Détails du podcast',
+    'No items to display': 'Aucun élément à afficher',
+    'Episode Detail': "Détail de l'épisode",
   },
 };

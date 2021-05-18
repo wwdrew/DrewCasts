@@ -12,5 +12,7 @@ export default {
     'Episodes you have listened to': 'Episodes you have listened to.',
     'New & Noteworthy': 'New & Noteworthy',
     'Podcast Detail': 'Podcast Detail',
+    'No items to display': 'No items to display',
+    'Episode Detail': 'Episode Detail',
   },
 };

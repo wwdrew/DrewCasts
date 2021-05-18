@@ -1,5 +1,5 @@
 import React from 'react';
-// import { useTranslation } from "react-i18next"
+import { useTranslation } from 'react-i18next';
 import {
   Platform,
   PlatformColor,
@@ -10,12 +10,12 @@ import {
 } from 'react-native';
 
 const EpisodeDetailScreen = () => {
-  // const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <SafeAreaView style={styles.mainContainer}>
       <View style={styles.container}>
-        <Text style={styles.text}>Episode Detail</Text>
+        <Text style={styles.text}>{t('Episode Detail')}</Text>
       </View>
     </SafeAreaView>
   );
