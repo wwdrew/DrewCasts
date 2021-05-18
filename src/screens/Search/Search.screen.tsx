@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { SearchStackParams } from '../../navigation/search.stack';
+import { SearchStackParams } from '../../navigation';
 
 type SearchScreenNavigationProp = StackNavigationProp<
   SearchStackParams,

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import {
   Platform,
   PlatformColor,
@@ -8,8 +7,9 @@ import {
   Text,
   View,
 } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { ListenNowStackParams } from '../../navigation/listennow.stack';
+import { ListenNowStackParams } from '../../navigation';
 
 type PodcastScreenNavigationProp = StackNavigationProp<
   ListenNowStackParams,

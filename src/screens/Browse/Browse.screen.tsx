@@ -11,7 +11,7 @@ import { useTranslation } from 'react-i18next';
 import { useQuery } from 'react-query';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-import { BrowseStackParams } from '../../navigation/browse.stack';
+import { BrowseStackParams } from '../../navigation';
 import { ScrollList } from '../../components';
 
 type BrowseScreenNavigationProp = StackNavigationProp<

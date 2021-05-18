@@ -8,13 +8,12 @@ import {
   StyleSheet,
   Text,
 } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { CompositeNavigationProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { useTranslation } from 'react-i18next';
 import { ScrollList } from '../../components';
-import { AppStackParamList } from '../../navigation/app.navigator';
-import { TabStackParamList } from '../../navigation/tabs.navigator';
+import { AppStackParamList, TabStackParamList } from '../../navigation';
 
 const upNextItems: Podcast[] = [
   {
