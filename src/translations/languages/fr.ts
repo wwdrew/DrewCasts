@@ -14,5 +14,9 @@ export default {
     'Podcast Detail': 'Détails du podcast',
     'No items to display': 'Aucun élément à afficher',
     'Episode Detail': "Détail de l'épisode",
+    'An error has occurred': 'Une erreur est survenue',
+    Loading: 'Chargement',
+    'No data': 'Pas de données',
+    'Welcome to DrewCasts': 'Bienvenue chez DrewCasts',
   },
 };

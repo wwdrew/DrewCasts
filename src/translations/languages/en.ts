@@ -14,5 +14,9 @@ export default {
     'Podcast Detail': 'Podcast Detail',
     'No items to display': 'No items to display',
     'Episode Detail': 'Episode Detail',
+    'An error has occurred': 'An error has occurred',
+    Loading: 'Loading',
+    'No data': 'No data',
+    'Welcome to DrewCasts': 'Welcome to DrewCasts',
   },
 };

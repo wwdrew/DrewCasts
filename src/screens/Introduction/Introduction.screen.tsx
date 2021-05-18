@@ -1,10 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Text, View } from 'react-native';
 
 const IntroductionScreen = () => {
+  const { t } = useTranslation();
+
   return (
     <View>
-      <Text>Welcome to DrewCasts</Text>
+      <Text>{t('Welcome to DrewCasts')}</Text>
     </View>
   );
 };
