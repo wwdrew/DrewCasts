@@ -33,12 +33,16 @@ const BrowseScreen = ({}: Props) => {
   );
   const { t } = useTranslation();
 
+  if (error) {
+    return <Text>An error has occurred: {error.message}</Text>;
+  }
+
   if (isLoading) {
     return <Text>Loading...</Text>;
   }
 
-  if (error) {
-    return <Text>An error has occurred: {error.message}</Text>;
+  if (!data) {
+    return <Text>No data</Text>;
   }
 
   console.log({ data });
