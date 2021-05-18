@@ -1,14 +1,16 @@
 import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useTranslation } from 'react-i18next';
+import { Platform, PlatformColor } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import EntypoIcon from 'react-native-vector-icons/Entypo';
+import { useTranslation } from 'react-i18next';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import ListenNowStack from './listennow.stack';
-import BrowseStack from './browse.stack';
-import LibraryStack from './library.stack';
-import SearchStack from './search.stack';
-import { Platform, PlatformColor } from 'react-native';
+import {
+  BrowseStack,
+  LibraryStack,
+  ListenNowStack,
+  SearchStack,
+} from '@navigation';
 
 export type TabStackParamList = {
   ListenNow: undefined;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Platform, PlatformColor } from 'react-native';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import { useTranslation } from 'react-i18next';
 import {
@@ -7,6 +6,7 @@ import {
   PodcastDetailScreen,
   SearchScreen,
 } from '../screens';
+import { screenOptions } from './screenOptions';
 
 export type SearchStackParams = {
   EpisodeDetail: undefined;
@@ -20,30 +20,12 @@ const SearchStack = () => {
   const { t } = useTranslation();
 
   return (
-    // @ts-expect-error: screens doesn't expect symbols yet
     <Search.Navigator
       initialRouteName="Search"
+      // @ts-expect-error: screens doesn't expect symbols yet
       screenOptions={{
-        headerLargeTitle: true,
+        ...screenOptions,
         headerTitle: t('Search'),
-        headerStyle: {
-          ...Platform.select({
-            ios: {
-              backgroundColor: PlatformColor('systemBackground'),
-            },
-            android: {
-              backgroundColor: PlatformColor('@android:color/background_dark'),
-            },
-          }),
-        },
-        headerTintColor: Platform.select({
-          ios: PlatformColor('label'),
-          android: PlatformColor('@android:color/primary_text_dark'),
-        }),
-        headerTitleStyle: Platform.select({
-          ios: PlatformColor('systemPurple'),
-          android: PlatformColor('@android:color/holo_purple'),
-        }),
       }}>
       <Search.Screen name="Search" component={SearchScreen} />
       <Search.Screen name="PodcastDetail" component={PodcastDetailScreen} />

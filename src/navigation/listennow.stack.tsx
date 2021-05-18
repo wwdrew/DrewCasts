@@ -1,5 +1,4 @@
 import React from 'react';
-import { Platform, PlatformColor } from 'react-native';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import { useTranslation } from 'react-i18next';
 import {
@@ -8,6 +7,7 @@ import {
   ListenNowScreen,
   PodcastDetailScreen,
 } from '../screens';
+import { screenOptions } from './screenOptions';
 
 export type ListenNowStackParams = {
   EpisodeDetail: undefined;
@@ -22,30 +22,12 @@ const ListenNowStack = () => {
   const { t } = useTranslation();
 
   return (
-    // @ts-expect-error: screens doesn't expect symbols yet
     <ListenNow.Navigator
       initialRouteName="ListenNow"
+      // @ts-expect-error: screens doesn't expect symbols yet
       screenOptions={{
-        headerLargeTitle: true,
+        ...screenOptions,
         headerTitle: t('Listen Now'),
-        headerStyle: {
-          ...Platform.select({
-            ios: {
-              backgroundColor: PlatformColor('systemBackground'),
-            },
-            android: {
-              backgroundColor: PlatformColor('@android:color/background_dark'),
-            },
-          }),
-        },
-        headerTintColor: Platform.select({
-          ios: PlatformColor('label'),
-          android: PlatformColor('@android:color/primary_text_dark'),
-        }),
-        headerTitleStyle: Platform.select({
-          ios: PlatformColor('systemPurple'),
-          android: PlatformColor('@android:color/holo_purple'),
-        }),
       }}>
       <ListenNow.Screen name="EpisodeDetail" component={EpisodeDetailScreen} />
       <ListenNow.Screen
