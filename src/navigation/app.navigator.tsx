@@ -1,7 +1,8 @@
 import React from 'react';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
-import TabStack from './tabs.navigator';
-import { IntroductionScreen } from '../screens';
+
+import { TabStack } from '@navigation';
+import { IntroductionScreen } from '@screens';
 
 export type AppStackParamList = {
   Landing: undefined;

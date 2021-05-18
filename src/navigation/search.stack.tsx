@@ -1,11 +1,13 @@
 import React from 'react';
 import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import { useTranslation } from 'react-i18next';
+
 import {
   EpisodeDetailScreen,
   PodcastDetailScreen,
   SearchScreen,
-} from '../screens';
+} from '@screens';
+
 import { screenOptions } from './screenOptions';
 
 export type SearchStackParams = {

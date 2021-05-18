@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import {
   Platform,
   PlatformColor,
@@ -8,6 +7,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 const EpisodeDetailScreen = () => {
   const { t } = useTranslation();

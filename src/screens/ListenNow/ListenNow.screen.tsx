@@ -14,7 +14,6 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 
 import { ScrollList } from '@components';
-
 import { AppStackParamList, TabStackParamList } from '@navigation';
 
 const upNextItems: Podcast[] = [
