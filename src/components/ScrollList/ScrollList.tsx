@@ -1,51 +1,44 @@
-import React from "react"
+import React from 'react';
 import {
   Platform,
   PlatformColor,
   Pressable,
   StyleSheet,
   Text,
-  View
-} from "react-native"
-import { useTranslation } from "react-i18next"
-import PodcastItem from "../PodcastItem/PodcastItem"
-
-export interface Podcast {
-  id: number
-  date: string
-  notes: string
-  title: string
-}
+  View,
+} from 'react-native';
+import { useTranslation } from 'react-i18next';
+import PodcastItem from '../PodcastItem/PodcastItem';
 
 interface Props {
-  heading: string
-  items: Podcast[]
-  onPress: () => void
-  rows?: number
-  size?: "large" | "small"
-  subheading?: string
+  heading: string;
+  items: Podcast[];
+  onPress: () => void;
+  rows?: number;
+  size?: 'large' | 'small';
+  subheading?: string;
 }
 
 function generateItems(items: Podcast[]) {
-  return items.map(item => <PodcastItem key={item.id} item={item} />)
+  return items.map(item => <PodcastItem key={item.id} item={item} />);
 }
 
 const ScrollList = ({
   heading,
   subheading,
   onPress,
-  items
+  items,
 }: // rows = 1,
 // size = "small"
 Props) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.heading}>{heading}</Text>
         <Pressable onPress={onPress}>
-          <Text style={styles.seeAllLink}>{t("See All")}</Text>
+          <Text style={styles.seeAllLink}>{t('See All')}</Text>
         </Pressable>
       </View>
       {subheading ? <Text style={styles.subheading}>{subheading}</Text> : null}
@@ -57,71 +50,71 @@ Props) => {
         )}
       </View>
     </View>
-  )
-}
+  );
+};
 
-export default ScrollList
+export default ScrollList;
 
 const styles = StyleSheet.create({
   container: {
-    alignSelf: "stretch",
+    alignSelf: 'stretch',
     paddingVertical: 10,
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center"
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   heading: {
     fontSize: 20,
     lineHeight: 24,
-    fontWeight: "700",
+    fontWeight: '700',
     ...Platform.select({
       ios: {
-        color: PlatformColor("label")
+        color: PlatformColor('label'),
       },
       android: {
-        color: PlatformColor("@android:color/primary_text_dark")
-      }
-    })
+        color: PlatformColor('@android:color/primary_text_dark'),
+      },
+    }),
   },
   subheading: {
     fontSize: 16,
     lineHeight: 20,
-    fontWeight: "400",
+    fontWeight: '400',
     ...Platform.select({
       ios: {
-        color: PlatformColor("secondaryLabel")
+        color: PlatformColor('secondaryLabel'),
       },
       android: {
-        color: PlatformColor("@android:color/secondary_text_dark")
-      }
-    })
+        color: PlatformColor('@android:color/secondary_text_dark'),
+      },
+    }),
   },
   text: {
     ...Platform.select({
       ios: {
-        color: PlatformColor("label")
+        color: PlatformColor('label'),
       },
       android: {
-        color: PlatformColor("@android:color/primary_text_dark")
-      }
-    })
+        color: PlatformColor('@android:color/primary_text_dark'),
+      },
+    }),
   },
   seeAllLink: {
     ...Platform.select({
       ios: {
-        color: PlatformColor("systemPurple")
+        color: PlatformColor('systemPurple'),
       },
       android: {
-        color: PlatformColor("@android:color/holo_purple")
-      }
+        color: PlatformColor('@android:color/holo_purple'),
+      },
     }),
 
-    fontSize: 14
+    fontSize: 14,
   },
   items: {
-    marginTop: 10
-  }
-})
+    marginTop: 10,
+  },
+});

@@ -13,16 +13,15 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 import { BrowseStackParams } from '../../navigation/browse.stack';
 import { ScrollList } from '../../components';
-import { Podcast } from '../../components/ScrollList/ScrollList';
 
 type BrowseScreenNavigationProp = StackNavigationProp<
   BrowseStackParams,
   'Browse'
 >;
 
-type Props = {
+interface Props {
   navigation: BrowseScreenNavigationProp;
-};
+}
 
 const BrowseScreen = ({}: Props) => {
   const { isLoading, error, data } = useQuery<Podcast[], Error>(

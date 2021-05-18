@@ -1,4 +1,4 @@
-import en from "./languages/en"
-import fr from "./languages/fr"
+import en from './languages/en';
+import fr from './languages/fr';
 
-export default { en, fr }
+export default { en, fr };
