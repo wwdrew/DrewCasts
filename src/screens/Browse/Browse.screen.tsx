@@ -4,11 +4,9 @@ import {
   PlatformColor,
   SafeAreaView,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { useQuery } from 'react-query';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 import { ScrollList } from '@components';
@@ -24,32 +22,8 @@ interface Props {
 }
 
 const BrowseScreen = ({}: Props) => {
-  const { isLoading, error, data } = useQuery<Podcast[], Error>(
-    'repoData',
-    () =>
-      fetch('https://api.github.com/repos/tannerlinsley/react-query').then(
-        res => res.json(),
-      ),
-  );
   const { t } = useTranslation();
-
-  if (error) {
-    return (
-      <Text>
-        {t('An error has occurred')}: {error.message}
-      </Text>
-    );
-  }
-
-  if (isLoading) {
-    return <Text>{t('Loading')}...</Text>;
-  }
-
-  if (!data) {
-    return <Text>{t('No data')}</Text>;
-  }
-
-  console.log({ data });
+  const data: Podcast[] = [];
 
   return (
     <SafeAreaView style={styles.mainContainer}>
