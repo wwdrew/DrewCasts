@@ -13,7 +13,7 @@ jest.mock('react-native-reanimated', () => {
 });
 
 // Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
-// jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
+jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 
 jest.mock('react-i18next', () => ({
   // this mock makes sure any components using the translate hook can use it without a warning being shown
@@ -25,4 +25,9 @@ jest.mock('react-i18next', () => ({
       },
     };
   },
+}));
+
+jest.mock('react-native-iphone-x-helper', () => ({
+  getStatusBarHeight: () => null,
+  getBottomSpace: () => null,
 }));

@@ -32,7 +32,7 @@
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
     "@testing-library/jest-native": "^4.0.1",
-    "@testing-library/react-native": "^7.2.0",
+    "@testing-library/react-native": "^8.0.0-rc.1",
     "@types/babel__core": "^7.1.14",
     "@types/eslint": "7.2.10",
     "@types/react": "17.0.1",
@@ -49,7 +49,7 @@
     "typescript": "^4.2.4"
   },
   "jest": {
-    "preset": "react-native",
+    "preset": "@testing-library/react-native",
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",

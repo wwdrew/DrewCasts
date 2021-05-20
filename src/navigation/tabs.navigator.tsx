@@ -26,7 +26,6 @@ const TabStack = () => {
 
   return (
     <Tab.Navigator
-      lazy={false}
       tabBarOptions={{
         // @ts-expect-error: types are incomplete for PlatformColor
         activeTintColor: Platform.select({
