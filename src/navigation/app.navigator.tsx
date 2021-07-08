@@ -4,8 +4,11 @@ import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import { TabStack } from '@navigation';
 import { IntroductionScreen } from '@screens';
 
+import { TabStackParamList } from './tabs.navigator';
+import { NavigatorScreenParams } from '@react-navigation/native';
+
 export type AppStackParamList = {
-  Landing: undefined;
+  Landing: NavigatorScreenParams<TabStackParamList>;
   Introduction: undefined;
 };
 
