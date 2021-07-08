@@ -16,7 +16,7 @@ const App = createNativeStackNavigator<AppStackParamList>();
 
 const AppStack = () => (
   <App.Navigator
-    initialRouteName="Landing"
+    initialRouteName="Introduction"
     screenOptions={{
       headerShown: false,
       stackPresentation: 'modal',
